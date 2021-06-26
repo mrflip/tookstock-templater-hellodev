@@ -4,7 +4,7 @@ import * as Fixtures from "../fixtures"
 //
 import * as Renderers from "../../src/handlers/renderers"
 
-const { PurchaseTableHtml, PurchaseTableMD } = Fixtures
+const { PurchaseTableSimpleHtml, PurchaseTableSimpleMD } = Fixtures
 
 describe("Renderers", () => {
   describe("for markdown", () => {
@@ -17,8 +17,8 @@ describe("Renderers", () => {
       })
 
       it("formats tables", () => {
-        const markdown = PurchaseTableMD.doc
-        const expected = PurchaseTableHtml.doc
+        const markdown = PurchaseTableSimpleMD.doc
+        const expected = PurchaseTableSimpleHtml.doc
         const query = { markdownDoc: markdown }
         const html = Renderers.MarkdownToHtml(query)
         expect(html).to.eql(expected)

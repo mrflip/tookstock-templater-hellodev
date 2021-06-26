@@ -8,6 +8,8 @@ If you prefer to download the code and work locally, that's cool with us -- uplo
 
 You can ignore everything but the files in `src/` and `tests/`. Although this repo can be run as a live API, you only need to make the unit tests pass.
 
+This repo is located at https://github.com/mrflip/tookstock-templater-hellodev/
+
 ## Task:
 
 This repo holds a lightweight API to do two things:
@@ -25,11 +27,11 @@ Given a field configuration (see `src/templating/Templates.js`) such as
 
 ```
   { fields: {
-    productCode: { len: 16, human: "Product Code" },
-    title: { len: 28, human: "Product Name" },
-    unitPrice: { len: 12, as: "price" },
-    quantity: { len: 8, as: "int" },
-    totalPrice: { len: 14, as: "price" },
+    productCode: { len: 16 },
+    productName: { len: 28 },
+    unitPrice: { len: 12 },
+    quantity: { len: 8 },
+    totalPrice: { len: 14 },
   } }
 ```
 
@@ -37,8 +39,8 @@ and matching data (see `tests/fixtures/PurchaseData.js`)
 
 ```
 [
-  { title: "Apples", unitPrice: "1.25", quantity: 7, totalPrice: "8.75", productCode: "A45738" },
-  { title: "Really Expensive Thing", unitPrice: "123,456.78", quantity: 10, totalPrice: "1,234,567.80" productCode: "A9683/BK/W" },
+  { productName: "Apples", unitPrice: "1.25", quantity: 7, totalPrice: "8.75", productCode: "A45738" },
+  { productName: "Really Expensive Thing", unitPrice: "123,456.78", quantity: 10, totalPrice: "1,234,567.80" productCode: "A9683/BK/W" },
 ]
 ```
 
@@ -47,18 +49,13 @@ Make the formatTable function in TemplateHelpers return a markdown-formatted tab
 ```
 |   Product Code   |         Product Name         |  Unit Price  | Quantity |  Total Price   |
 | ---------------- | ---------------------------- | ------------ | -------- | -------------- |
-| A45738           | Apples                       | $       1.25 |        7 | $         8.75 |
-| A9683/BK/W       | Really Expensive Thing       | $ 123,456.78 |       10 | $ 1,234,567.80 |
-| LONG-TITLE       | This Title is just way too long but we're ready for it anyway | $       1.00 |        4 | $         4.00 |
-| YIKES            | SUUUPER Expensive Thing      | $ 1,234,567.89 |       10 | $ 12,345,678.90 |
+| A45738           | Apples                       | 1.25         | 7        | 8.75           |
+| A9683/BK/W       | Really Expensive Thing       | 123,456.78   | 10       | 1,234,567.80   |
+| LONG-TITLE       | This Title is just way too long but we're ready for it anyway | 1.00         | 4        | 4.00           |
+| YIKES            | SUUUPER Expensive Thing      | 1,234,567.89 | 10       | 12,345,678.90  |
 ```
 
-- if the fieldSpec has a 'human' value, use that as the title; otherwise, use the startCase helper from lodash to format it using the field name.
-- Lodash has methods for _.pad, _.padStart, \_.padEnd to center/left/right align a string.
-- titles should be centered
-- for a `price` field, right-align it and prepend '\$ '
-- for an `int` field, right-align it.
-- all other data rows should be left-aligned
+You **only** need to make the tests pass -- the only parameter in tableSpec to pay attention to is the length.
 
 ### Task 2: connect those helpers to an API handler (handlers/templaters.js)
 
