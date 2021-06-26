@@ -8,6 +8,16 @@ export const PurchaseTable = {
   },
 }
 
+export const PurchaseTableSimple = {
+  fields: {
+    productCode: { len: 16 },
+    productName: { len: 28 },
+    unitPrice: { len: 12 },
+    quantity: { len: 8 },
+    totalPrice: { len: 14 },
+  },
+}
+
 export const ShipmentTrackingTable = {
   fields: {
     trackingNumber: { len: 25 },
