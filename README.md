@@ -6,7 +6,9 @@ If you find yourself doing something complicated, stop -- we've probably misconf
 
 If you prefer to download the code and work locally, that's cool with us -- upload your code to github and send us the link.
 
-You can ignore everything but the files in `src/` and `tests/`. Although this repo can be run as a live API, you only need to make the unit tests pass.
+You can ignore everything but the files in `src/` and `tests/`. Although this repo can be run as a live API, 
+
+> **you only need to make the unit tests pass.**
 
 This repo is located at https://github.com/mrflip/tookstock-templater-hellodev/
 
@@ -17,7 +19,7 @@ This repo holds a lightweight API to do two things:
 - Given a named document template -- eg 'PurchaseOrder' -- and a data record, return a markdown-formatted document based on that data.
 - Given a markdown document, render it as HTML.
 
-You will see three files with unit tests in the `tests/` directory. Right now, the tests only pass because the corresponding file in src/ is returning a hard-coded correct answer.
+You will see three files with unit tests in the `tests/` directory. Right now, one test fails and the others pass -- but only because the corresponding file in src/ is returning a **hard-coded correct answer.**
 
 In each of these files, remove the call to the fake method and make the tests pass with code you wrote or copied from someone else.
 
@@ -72,7 +74,9 @@ The MarkdownToHtml function in `handlers/renderers.js` should be given an object
 
 - markdownDoc, a blob of markdown text
 
-It should directly return that text formatted as HTML. We've added the [Showdown](https://github.com/showdownjs/showdown) library; consult its docs for how to use it to turn text into HTML
+It should directly return that text formatted as HTML. 
+
+**We've added the [Showdown](https://github.com/showdownjs/showdown) library**, so you don't need to select one or add it. Consult the [showdow docs](https://github.com/showdownjs/showdown) for how to turn text into HTML
 
 ### Task 4: Critique
 
