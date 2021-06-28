@@ -1,14 +1,21 @@
 # Tookstock Programming Kata
 
-Please ask for help liberally, especially if you don't understand the task or if you are fighting with the programming environment rather than writing code.
+Please ask for help liberally, especially if you don't understand the task!
 
-If you find yourself doing something complicated, stop -- we've probably misconfigured or miscommunicated something.
+If you find yourself:
+
+* doing something complicated,
+* fighting with the programming environment,
+* adding an outside library, or
+* unclear on what you're supposed to do,
+
+stop -- we've probably misconfigured or miscommunicated something. Move to a different exercise, and we can decide to jump on Zoom, or most likely those other exercises will be enough.
 
 If you prefer to download the code and work locally, that's cool with us -- upload your code to github and send us the link.
 
 You can ignore everything but the files in `src/` and `tests/`. Although this repo can be run as a live API, 
 
-> **you only need to make the unit tests pass.**
+> **you only need to make the unit tests pass: you don't need to add any other features**
 
 This repo is located at https://github.com/mrflip/tookstock-templater-hellodev/
 
